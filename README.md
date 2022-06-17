@@ -69,11 +69,6 @@ connection.on('connected', (event) => {
         console.log(data);
         queue.basicAck(data.delivery_tag) ;
 	});
-    
-    connection.on('error', (event) => {
-        console.log(connection);
-        console.log("you are not connected");
-    });
 });
 
 connection.connect();
