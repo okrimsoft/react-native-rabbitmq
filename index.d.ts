@@ -33,6 +33,7 @@ export class Queue {
   bind(exchange: Exchange, routing_key: string): void;
   unbind(exchange: Exchange, routing_key: string): void;
   basicAck(delivery_tag: number): void;
+  basicNack(delivery_tag: number): void;
 
   handleEvent(event: Object): void;
 
@@ -41,12 +42,12 @@ export class Queue {
 }
 
 interface Message {
-  content_type: string,
-  delivery_tag: number,
-  exchange: string,
-  is_redeliver: boolean,
-  message: string,
-  name: string,
-  queue_name: string,
-  routing_key: string
+  content_type: string;
+  delivery_tag: number;
+  exchange: string;
+  is_redeliver: boolean;
+  message: string;
+  name: string;
+  queue_name: string;
+  routing_key: string;
 }
